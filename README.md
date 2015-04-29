@@ -29,9 +29,14 @@ so it's not that bad, there is one recommended package to use MINUIT from Python
   easy to understand Python, i.e. have an implementation of MINUIT
   that someone can understand (and maybe modify for their application)
   more easily.
-- MIT licensed, i.e. compatible with the scientific Python packages.
-  This requires that we don't look at the MINUIT code. Hopefully the
-  formulas and description from the 1975 paper is enough ...
+- We would like to have a liberal license, like MIT or BSD-3, so that this
+  can be included in the future in packages like scipy.optimize.
+  But it's not possible, because there's no high-level description of what MINUIT
+  actually does, so to re-implement it one needs to read the code which is LGPL.
+  The 1975 MINUIT paper contains the core method description (update formula,
+  stopping criterion), but many little details that make MINUIT (and MIGRAD specifically)
+  robust and better than e.g. the plain BFGS implementation in scipy.optimize
+  like checks to stay numerically stable or the line search are not described.
 
 ## Status
 
